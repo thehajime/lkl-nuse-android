@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NUSE</string>
+    <string name="action_none">none</string>
+    <string name="netperf">netperf</string>
+    <string name="curl">curl</string>
+    <string name="iperf3">iperf3</string>
+    <string name="button_start">Start</string>
+</resources>
