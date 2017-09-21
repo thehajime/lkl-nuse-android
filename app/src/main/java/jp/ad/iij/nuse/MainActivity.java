@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
-    static final String TEST_HOST = "202.214.86.51";
+    static final String TEST_HOST = "$HOSTNAME";
     static final String path = "/data/data/jp.ad.iij.nuse/cache/";
     static final String netperf_args = "-H " + TEST_HOST + " -l3 -c -C -D1 -T 1/1 -p 443 -- -P80";
     static final String curl_args = "http://multipath-tcp.org";
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(onClick_button);
         // radio box
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.app_list);
-        radioGroup.check(R.id.radio_button_netperf);
+        radioGroup.check(R.id.radio_button_curl);
         radioGroup.setOnCheckedChangeListener(OnCheckedChangeListener);   
 
         EditText edit = (EditText)findViewById(R.id.args);
