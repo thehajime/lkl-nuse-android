@@ -7,14 +7,14 @@ export PATH=${PATH}:${script_dir}
 # rmnet changes often, so just grep it
 RMNET_IP=$(ifconfig rmnet0 | grep "inet addr" | cut -d ":" -f 2 | cut -d " " -f 1)
 RMNET_MASK=$(ip route | grep rmnet0 | grep '/' | head -n 1 | cut -d " " -f 1 | cut -d "/" -f 2)
-RMNET_GATEWAY=$(ip route | grep "via" | grep rmnet0 | cut -d " " -f 3 | head -n 1)
+RMNET_GATEWAY=$(ip route | grep "via" | grep rmnet0 | head -n 1 | cut -d " " -f 3)
 
 # wifi configs
 WIFI_MAC=$(ip ad show dev wlan0 | grep link/ether | cut -d " " -f6)
 # rmnet changes often, so just grep it
 WIFI_IP=$(ifconfig wlan0 | grep "inet addr" | cut -d ":" -f 2 | cut -d " " -f 1)
 WIFI_MASK=$(ip route | grep wlan0 | grep '/' | head -n 1 | cut -d " " -f 1 | cut -d "/" -f 2)
-WIFI_GATEWAY=$(ip route show table all | grep "via" | grep wlan0 | cut -d " " -f 3 | head -n 1)
+WIFI_GATEWAY=$(ip route show table all | grep "via" | grep wlan0 | head -n 1 | cut -d " " -f 3)
 
 #LKL_HIJACK_DEBUG=1
 # LKL_HIJACK_BOOT_CMDLINE="ip=dhcp"
