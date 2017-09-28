@@ -24,6 +24,11 @@ if [ -z $WIFI_GATEWAY ] ; then
     DEF_GATEWAY=$RMNET_GATEWAY
 fi
 
+if [ -n ${LKL_HIJACK_DEBUG+x}  ]
+then
+  trap '' TSTP
+fi
+
 export LKL_HIJACK_SYSCTL="net.ipv4.tcp_rmem=524288 1048576 2097152;net.ipv4.tcp_wmem=262144 524288 1048576"
 export LKL_HIJACK_SINGLE_CPU=2
 
