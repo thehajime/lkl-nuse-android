@@ -56,6 +56,7 @@ cat <<EOF > ${script_dir}/lkl-hijack.json
             "type": "raw-ipenc"
         }
     ],
+    "delay_main": "1000000",
     "singlecpu": "1"
 }
 EOF

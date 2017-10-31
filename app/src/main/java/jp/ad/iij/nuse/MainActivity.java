@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         // assets extraction
         try {
+            _extract_assets("liblkl-hijack.so");
             _extract_assets("liblkl-hijack-mptcp.so");
             _extract_assets("lkl-hijack-android.sh");
             _extract_assets("netperf");
